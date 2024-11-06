@@ -37,7 +37,7 @@ class _TempState extends ConsumerState<Temp> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Details'),
+        title: const Text('Product Details'),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())

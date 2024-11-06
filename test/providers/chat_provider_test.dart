@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mivro/models/message.dart';
-import 'package:mivro/providers/chat_provider.dart';
+import 'package:mivro/presentation/chat/model/message.dart';
+import 'package:mivro/presentation/chat/provider/chat_provider.dart';
 import 'package:mockito/annotations.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
@@ -26,7 +26,7 @@ void main() {
       final response = await notifier.getResponse('Prompt text');
 
       final chats = container.read(chatsProvider);
-      expect(chats, [Message(text: 'Response text', isUser: false)]);
+      expect(chats, [const Message(text: 'Response text', isUser: false)]);
       expect(response?.text, 'Response text');
     });
 
@@ -48,7 +48,7 @@ void main() {
       final response = await notifier.getResponse('Prompt text');
 
       final chats = container.read(chatsProvider);
-      expect(chats, [Message(text: '', isUser: false)]);
+      expect(chats, [const Message(text: '', isUser: false)]);
       expect(response?.text, '');
     });
   });

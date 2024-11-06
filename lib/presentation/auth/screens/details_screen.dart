@@ -223,7 +223,7 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen> {
                                 value: mc,
                                 child: Text(
                                   mc,
-                                  style: TextStyle(fontSize: 13),
+                                  style: const TextStyle(fontSize: 13),
                                 ),
                               ),
                             )

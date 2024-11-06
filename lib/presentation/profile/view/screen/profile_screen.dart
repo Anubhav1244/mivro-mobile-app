@@ -55,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           },
           child: Container(
             color: Colors.white,
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             child: Row(
               children: [
                  CircleAvatar(
@@ -81,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
         ),
-        Divider(),
+        const Divider(),
 
         // Menu options
         _buildMenuItem(context, 'Account Settings'),
@@ -93,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _buildMenuItem(context, 'Advanced'),
 
         // Logout button
-        Spacer(),
+        const Spacer(),
         Center(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 30),
@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
-                padding: EdgeInsets.symmetric(horizontal: 150, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -129,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildMenuItem(BuildContext context, String title) {
     return ListTile(
       title: Text(title),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
       onTap: () {
         
         

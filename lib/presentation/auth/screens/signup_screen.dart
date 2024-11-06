@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:lottie/lottie.dart';
 import 'package:mivro/constants.dart';
 import 'package:mivro/presentation/auth/api/create_account.dart';
-import 'package:mivro/presentation/auth/model/personal_details.dart';
 import 'package:mivro/presentation/auth/screens/details_screen.dart';
 import 'package:mivro/presentation/auth/screens/login_screen.dart';
-import 'package:mivro/presentation/home/view/screens/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({super.key});
 
   @override
   _SignUpScreenState createState() => _SignUpScreenState();

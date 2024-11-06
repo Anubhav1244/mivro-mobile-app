@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mivro/presentation/auth/model/personal_details.dart';
-import 'package:mivro/presentation/auth/provider/personal_details_provider.dart';
 
 class ProfileDetailsScreen extends ConsumerWidget {
   final Map<String, dynamic> personalDetails;

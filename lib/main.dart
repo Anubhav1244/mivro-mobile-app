@@ -1,12 +1,10 @@
 import 'dart:developer';
 
-import 'package:mivro/presentation/auth/screens/details_screen.dart';
 import 'package:mivro/presentation/auth/screens/login_screen.dart';
 import 'package:mivro/presentation/auth/screens/signup_screen.dart';
 import 'package:mivro/presentation/home/view/screens/home_page.dart';
 import 'package:mivro/utils/hexcolor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';

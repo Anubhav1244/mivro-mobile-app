@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -46,7 +45,7 @@ class _BarcodeScannerListViewState
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
-    Widget _buildIngredientRow(
+    Widget buildIngredientRow(
         String name, String percentage, String imageString) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -78,7 +77,7 @@ class _BarcodeScannerListViewState
       );
     }
 
-    Widget _buildNutritionRow(String title, String amount, String description,
+    Widget buildNutritionRow(String title, String amount, String description,
         String color, String imageString) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -158,7 +157,7 @@ class _BarcodeScannerListViewState
                     children: [
                       // Powered by OpenFoodFacts + Google Gemini
                       RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                           text: 'Powered by ',
                           style: TextStyle(
                               fontSize: 16,
@@ -181,10 +180,10 @@ class _BarcodeScannerListViewState
                         ),
                       ),
 
-                      SizedBox(height: 20), // Space between sections
+                      const SizedBox(height: 20), // Space between sections
 
                       // Search Section
-                      Text(
+                      const Text(
                         'App\n',
                         style: TextStyle(
                             fontSize: 22,
@@ -193,30 +192,30 @@ class _BarcodeScannerListViewState
                       ),
                       Text(
                         '• Search Type: ${result['search_type']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Search Response: ${result['search_response']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Response Time: ${result['response_time']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Response Size: ${result['response_size']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Search Date: ${result['search_date']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Search Time: ${result['search_time']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
 
-                      SizedBox(height: 20), // Space between sections
+                      const SizedBox(height: 20), // Space between sections
 
                       // Product Section
                       const Text(
@@ -228,48 +227,48 @@ class _BarcodeScannerListViewState
                       ),
                       Text(
                         '• ID: ${result['_id']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Total Nutrients: ${result['total_nutriments']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Total Ingredients: ${result['ingredients_n']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Total Additives: ${result['additives_n']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
                       Text(
                         '• Total Health Risks: ${result['total_health_risks']}',
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: const TextStyle(fontSize: 16, color: Colors.black),
                       ),
 
-                      SizedBox(height: 20), // Space between sections
+                      const SizedBox(height: 20), // Space between sections
 
                       // Warning Section
-                      Text(
+                      const Text(
                         'Warning\n',
                         style: TextStyle(
                             fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
-                      Text(
+                      const Text(
                         'The information provided is for general guidance only and should not be considered medical advice. Always seek professional advice for important health decisions.',
                         style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
 
-                      SizedBox(height: 20), // Space between sections
+                      const SizedBox(height: 20), // Space between sections
 
                       // Footer
-                      Text(
+                      const Text(
                         '© 2024 Areeb Ahmed, Shivansh Karan, Shashwat Kumar, Rishi Chirchi. All rights reserved.',
                         style: TextStyle(fontSize: 12, color: Colors.black),
                       ),
-                      Text(
+                      const Text(
                         'License - Documentation',
                         style: TextStyle(fontSize: 12, color: Colors.black),
                       ),
@@ -421,7 +420,7 @@ class _BarcodeScannerListViewState
                                       ? nutrientsCount
                                       : min(3, nutrientsCount));
                               i++)
-                            _buildNutritionRow(
+                            buildNutritionRow(
                               positiveNutrients[i]['name'],
                               positiveNutrients[i]['quantity'],
                               positiveNutrients[i]['text'],
@@ -473,7 +472,7 @@ class _BarcodeScannerListViewState
                                       ? nutrientsCount
                                       : min(3, nutrientsCount));
                               i++)
-                            _buildNutritionRow(
+                            buildNutritionRow(
                               positiveNutrients[i]['name'],
                               positiveNutrients[i]['quantity'],
                               positiveNutrients[i]['text'],
@@ -525,7 +524,7 @@ class _BarcodeScannerListViewState
                                       ? ingredientsCount
                                       : min(3, ingredientsCount));
                               i++)
-                            _buildIngredientRow(
+                            buildIngredientRow(
                               ingredients[i]['name'],
                               ingredients[i]['percentage'],
                               ingredients[i]['icon'].toLowerCase(),
@@ -699,7 +698,7 @@ class _BarcodeScannerListViewState
       );
     }
 
-    Widget _buildBarcodesListView() {
+    Widget buildBarcodesListView() {
       return StreamBuilder<BarcodeCapture>(
         stream: controller!.barcodes,
         builder: (context, snapshot) {
@@ -840,7 +839,7 @@ class _BarcodeScannerListViewState
             child: Column(
               children: [
                 Expanded(
-                  child: _buildBarcodesListView(),
+                  child: buildBarcodesListView(),
                 ),
               ],
             ),
